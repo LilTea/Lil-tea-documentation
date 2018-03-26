@@ -2,8 +2,8 @@
 window.onload = () => { $('.nav').children().click(changeActive) };
 
 function changeActive(){
-
-    let toScrollto =  $(this).children().first().html().replace(/\s/g, '');
+    console.log("asd");
+    let toScrollto =  $(this).html().replace(/\s/g, '');
     let toScrollElement = $(`.${toScrollto}`);
     
     let offset = $(toScrollElement).offset().top
