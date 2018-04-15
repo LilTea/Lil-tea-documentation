@@ -1,5 +1,5 @@
 
-window.onload = () => { $('.nav').children().click(changeActive) };
+window.onload = () => { $('.nav').children().click(changeActive); $('input').click(showExpl) };
 
 function changeActive(){
     console.log("asd");
@@ -15,4 +15,12 @@ function changeActive(){
     
     $('.active').removeAttr('class');
     $(this).addClass('active');
+}
+function showExpl(){
+    let exlp = $(this).parent().parent().next()
+    if($(this).parent().parent().next().is(':visible')){
+        exlp.fadeOut()
+    }else{
+        exlp.fadeIn()
+    }
 }
