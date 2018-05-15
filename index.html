@@ -27,7 +27,7 @@
             </p>
             <h3>Atoms</h3>
             <p>Atoms are the main part of the language. They are built-in functions making solutions quite easier and faster. Below you can see a list of all the atoms LilTea supports and thanks to the implementation of the language and that they can be added easily so many more are on the way!</p>
-            <table>  
+            <table id = "grid">  
                     <tr>
                         <th>lilTea symbol</th>
                         <th>bigTea symbol</th>
@@ -153,6 +153,78 @@
                     <tr class="hidden">
                         <td colspan = "3">Pushes the length of the stack</td>
                     </tr>
+                    <tr>  
+                            <td>&</td>
+                            <td>AND</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Push the bitwise AND comparisment of the last two elements</td>
+                    </tr>
+                    <tr>  
+                            <td>|</td>
+                            <td>OR</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Push the bitwise OR comparisment of the last two elements</td>
+                    </tr>
+                    <tr>  
+                            <td>^</td>
+                            <td>XOR</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Push the bitwise XOR comparisment of the last two elements</td>
+                    </tr>
+                    <tr>  
+                            <td>Ð</td>
+                            <td>floor</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Floor the last value in the stack</td>
+                    </tr>
+                    <tr>  
+                            <td>Ç</td>
+                            <td>ceil</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Ceil the last value in the stack</td>
+                    </tr>
+                    <tr>  
+                            <td>¿</td>
+                            <td>toInteger</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Converts the last velue to number</td>
+                    </tr>
+                    <tr>  
+                            <td>€</td>
+                            <td>toArray</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Converts the last velue to array</td>
+                    </tr>
+                    <tr>  
+                            <td>P</td>
+                            <td>printPop</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Prints the last value in the stack and pops it</td>
+                    </tr>
+                    <tr>  
+                            <td>p</td>
+                            <td>print</td>
+                            <td><input type="image", src="index.png"></td>
+                        </tr>
+                        <tr class="hidden">
+                            <td colspan = "3">Prints the last value in the stack</td>
+                    </tr>
                 </table>
                  
           </div>
@@ -165,19 +237,78 @@
             <h2>Simple solutions</h2>
             If you want to sum the numbers 6 and 5 in the stack all you have do is the following:
             <pre>
-                <code>
-    node ./source.lit 5 6
-                </code>
+                    <code>
+node ./source.lit 5 6
+                    </code>
             </pre>
             And your source file should be: 
             <pre>
                     <code>
-      +
++
                     </code>
             </pre>
             <h2>Language core</h2>
-            LilTea 
-        </div>
+            In order to understand LilTea you will need to know the basics of working with a stack.
+            <br>
+            <br>
+            In computer science, a stack is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and. pop, which removes the most recently added element that was not yet removed.
+             <h3> Pushing </h3>
+            <p>In LilTea pusing values to the stack can be done either on the command line:</p>
+             <pre>
+                <code>
+node ./source.lit Hello!
+                </code>
+            </pre>
+
+        <button class="button" value="result1">Execute!</button>
+            <pre id = "result1" class="hidden">
+                <code>
+["Hello!"]
+                </code>
+            </pre>
+            <p>Other way of pushing is by using an atom or a litereal:</p>
+            <pre>
+                <code>
+5>Hello!<'g
+                </code>
+            </pre>
+
+        <button class="button" value="result2">Execute!</button>
+        <pre id = "result2" class="hidden">
+            <code>
+[5,"Hello!",'g']
+            </code>
+        </pre>
+        <h3> Poping </h3>
+        <p>Poping values can be done by atoms that uses the last value of the stack and pops it<p>
+            <pre>
+                <code>
+5>Hello!<'gP
+                </code>
+            </pre>
+        
+            <button class="button" value="result3">Execute!</button>
+            <pre id = "result3" class="hidden">
+                <code>
+[5,"Hello!"]
+                </code>
+        </pre>
+        <h3> Peaking </h3>
+        <p>Peaking a value means getting the last value of the stack without popping it. This can be done either an atom that "peaks" the last value or using a modificator for preventing poping<p></p>
+        <pre>
+                <code>
+>LilTea!&ltp
+                </code>
+            </pre>
+        
+            <button class="button" value="result4">Execute!</button>
+            <pre id = "result4" class="hidden">
+                <code>
+["LilTea"]
+                </code>
+        </pre>
+
+    </div>
       </div>
       <div class="Implementation">
         <div class="navigation">
@@ -188,13 +319,13 @@
             <p>The prelexer is responsible for the literal completion system so</p>
             <pre>
                     <code>
-        <span style="color:#FF0000">5</span>+<span style="color:red">6</span><span style="color: rgb(1, 77, 1)">>asd</span>
+<span style="color:#FF0000">5</span>+<span style="color:red">6</span><span style="color: rgb(1, 77, 1)">>asd</span>
                     </code>
             </pre>
         <p>and</p>
             <pre>
                     <code>
-        5+6>asd<
+5+6>asd<
                     </code>
             </pre>
             <p>should be the interpretated the same way.</p>
@@ -209,27 +340,27 @@
                 <li> Arrays </li>
             </ul>
             <pre style="font-size: 23px;">
-            <code>
-        <span style="color: red">5</span> // literal for number
-        <span style="color: blue">'c</span> // literal for characters
-        <span style="color: green">>Hello World!<</span> // literal for Strings
-        <span style="color: #0050FD">[1,2,>Hello!<]</span> // literal for Array
+           <code>
+    <span style="color: red">5</span> // literal for number
+    <span style="color: blue">'c</span> // literal for characters
+    <span style="color: green">>Hello World!<</span> // literal for Strings
+    <span style="color: #0050FD">[1,2,>Hello!<]</span> // literal for Array
             </code>
             </pre>
         <h3> Conditionals </h3>
         <p>Like every other language LilTea has all the known conditeonal statements. For instance:</p>
         <pre style="font-size: 23px;">
-                <code>
-        =>STATMENT<Ø?p
-                </code>
+                    <code>
+=>STATMENT<Ø?p
+                    </code>
         </pre>
         The following code is read like this:
         <pre style="font-size: 17px;">
     <code>
-    <span style="color: red; font-size: 25px">=</span> // Operator for equality
-    <span style="color: green; font-size: 18px">>STATEMENT<</span>// Statement to check for using the last element in the stack for comparisment
-    <span style="color: #F46524; font-size: 25px">Ø</span>// The atom to be executed if the comparisment returns true (if)
-    <span style="color: blue; font-size: 25px">p</span>// the atom to be executed if the comparisment returns false (else)
+<span style="color: red; font-size: 25px">=</span> // Operator for equality
+<span style="color: green; font-size: 18px">>STATEMENT<</span>// Statement to check for using the last element in the stack for comparisment
+<span style="color: #F46524; font-size: 25px">Ø</span>// The atom to be executed if the comparisment returns true (if)
+<span style="color: blue; font-size: 25px">p</span>// the atom to be executed if the comparisment returns false (else)
     </code>
         </pre>
         <h3> Modifiers </h3>
@@ -255,19 +386,19 @@
         <h3> Variables </h3>
         LilTea also supports built-in variables for easier access to infromation. There are 6 variables and they are labeled like the first 6 letters of the alphabet(A,B,C,D,E,F).
         Working with them is easy. For example:
-        <pre style="font-size: 23px;">
-                <code>
-        <span style="color:green">>Hello!&lt</span><span style="color:red">a</span> // Sets the variable A to the string Hello!
-                </code>
-        </pre>
+<pre style="font-size: 23px;">
+        <code>
+<span style="color:green">>Hello!&lt</span><span style="color:red">a</span> // Sets the variable A to the string Hello!
+        </code>
+</pre>
         Then later you can add the variable to the end of the stack by just calling:
-        <pre style="font-size: 23px;">
-                <code>
-        <span style="color:red">A</span> // Pushes the Hello! to the end of the stack
-                </code>
-        </pre>
+<pre style="font-size: 23px;">
+            <code>
+<span style="color:red">A</span> // Pushes the Hello! to the end of the stack
+        </code>
+</pre>
         All the variables have default value of often used values in solving golding problems:
-        <table style="margin-top: 30px">  
+        <table style="margin-top: 30px" id = "grid">  
                 <tr>
                     <th>Variable</th>
                     <th>Default value</th>
@@ -299,44 +430,44 @@
             </table>
         </div>
       </div>
+      <div class="Interpretator">
+        <div class="navigation">
+                <hr> <h1>Online interpretator</h1> <hr>
+        </div>
+        <div class= "content">
+                <h2>Try liltea now:</h2>
+                <textarea id = "int" spellcheck="false" rows="40" cols="65"></textarea>
+        </div>
+    </div>
       <div class="About">
         <div class="navigation">
                 <hr> <h1>About  </h1> <hr>
         </div>
         <div class= "content">
             <h2>Who are we?</h2>
-            <p>We are two students from eleven grade from TUES, Bulgaria. We hope this project will be a good start for our careers.</p>
+            <p>We are two students from eleven grade from TUES,  Bulgaria. We hope this project will be a good start for our careers.</p>
             <p> Here is our githutb repository with all the work we have done so far: <p>
                 <pre>
-                        <code>
-        https://github.com/LilTea/liltea
-                        </code>
+                    <code>
+<a href="https://github.com/LilTea/liltea">https://github.com/LilTea/liltea</a>
+                    </code>
                 </pre>
                 
             <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:800; height: 350; margin-bottom: 40px; font-family: 'Courier New'">  
-                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 60px"/>
+                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 30px"/>
                 <p>Name: Dartin Macev</p> 
                 <p>Role: Developer, creator</p>
-                <p>Github:  https://github.com/mdatsev</p>  
+                <p>Github: <span style="font-size: 20px"><a href="https://github.com/mdatsev">https://github.com/mdatsev</a></span></p>  
             </div> 
             <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:800; height: 350; font-family: 'Courier New'">  
-                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 60px"/>
+                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 30px"/>
                 <p>Name: Gladislav Veorgiev</p> 
                 <p>Role: Developer, creator</p>
-                <p>Github:  https://github.com/mdatsev</p>  
+                <p>Github:<span style="font-size: 20px"><a href="https://github.com/VGeorgiev1">https://github.com/VGeorgiev1</a></span></p>  
             </div>    
         </div>
         
       </div>
-      <div class="Interpretator">
-            <div class="navigation">
-                    <hr> <h1>Online interpretator</h1> <hr>
-            </div>
-            <div class= "content">
-                    <h2>Try liltea now:</h2>
-                    <textarea spellcheck="false" rows="40" cols="70"></textarea>
-            </div>
-     </div>
     </div>
 </body>  
 <script src="main.js"></script>

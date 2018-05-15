@@ -1,6 +1,25 @@
 
-window.onload = () => { $('.nav').children().click(changeActive); $('input').click(showExpl);$('textarea').val("lil@tea: ") ;$("textarea").on("keydown", keyPress);  $("textarea").on("click", setCursorToTheEnd) };
+window.onload = () => { $('.nav').children().click(changeActive); 
+$('input').click(showExpl);
+$('textarea').val("lil@tea: ") ;
+$("textarea").on("keydown", keyPress);
+$("textarea").on("click", setCursorToTheEnd)
+$($('#grid').children()[0]).children().filter((i,tr) => tr.className== "" ).each(
+    function(i, tr){  
+        if(i %  2 == 1){
+            $(tr).attr("bgcolor", "#F46524")
+        }
+    }
+)
+    $(".button").on("click", function(e){
+        $(`#` + $(this).attr("value")).fadeIn().delay(3000).fadeOut()  
+    })
+}
+function showResult(e){
+    e.preventDefault();
 
+
+}
 function changeActive(){
     let toScrollto =  $(this).html().replace(/\s/g, '');
     let toScrollElement = $(`.${toScrollto}`);

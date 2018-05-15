@@ -37,24 +37,22 @@ li.active {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .main-page {
     margin-left: 250px;
     padding: 1px 16px;
     margin-top: 0px;
-    height: 940%;
     width: 50%;
     background-color: #F8F8F8; 
     display: block;
+    position:absolute;
 }
-textarea{
-    resize: none;
-    -webkit-user-select: none;
-}
+
 .content{
     margin: 30px;
-    margin-bottom: 400px;
+    margin-bottom: 200px;
     font-size: 26px;
 }
 .header {     
@@ -66,6 +64,7 @@ textarea{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 input{
     width:20px
@@ -92,6 +91,7 @@ table {
     width: 100%; 
     border-collapse: collapse;
     border-spacing: 0;
+    font-size: 22px;
 } 
 td, th { 
     border: 1px solid #CCC;
@@ -103,13 +103,37 @@ th {
     font-weight: bold; /* Make sure they're bold */
 }
 
-td {  
-    background: #FAFAFA; /* Lighter grey background */
+td {  /* Lighter grey background */
     text-align: center; /* Center our text */
 }
 pre code {
     background-color: #eee;
     border: 1px solid #999;
     display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    margin:auto;
   }
-  
+textarea{
+    font-size: 20px;
+    font-family: "Courier New"; 
+    color: #F46524;
+    outline: none;
+    background-color: #333;
+    border: none;
+    font-weight: bold;
+    resize: none;
+}
+button{
+    margin:auto;
+    display:block;
+    height:50px;
+    width:200px;
+    font-size: 20px;
+    font-family: "Courier New"; 
+    background-color: #F46524;
+    color: white;
+    border-radius: 12px;
+    border: none;
+}
