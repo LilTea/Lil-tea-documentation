@@ -21,6 +21,7 @@ li.active {
     position: fixed;
     height: 100%;
     overflow: hidden;
+    
 }
 .navigation {
     margin: 30px;
@@ -32,7 +33,10 @@ li.active {
     text-decoration: none;
     height: 60px;
     font-size: 27px;
-    font-family: "Courier New"
+    font-family: "Courier New"; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-page {
@@ -50,15 +54,18 @@ textarea{
 }
 .content{
     margin: 30px;
-    margin-bottom: 700px;
+    margin-bottom: 400px;
+    font-size: 26px;
 }
 .header {     
     width: 250px;
     background-color: #f46524;
     height: 100px;
-    text-align: center;
     font-size: 30px;
-    font-family: "Courier New"
+    font-family: "Courier New";
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 input{
     width:20px

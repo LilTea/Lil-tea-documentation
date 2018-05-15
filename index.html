@@ -16,12 +16,17 @@
           <div class="navigation">
             <h1> Introduction </h1> <hr>
           </div>
-          <div class= "content">
+          <div class= "content" >
             <h2>Language basics</h2>
             <h3>Stack</h3>
-            <p>LilTea is a stack-based language with a single stack. Every operations performs a action on the stack</p>
+            <p>LilTea is a stack-based programming language with a single stack. Every operations performs a action on the stack and pushes the result.
+                This is a domain specific language made for golfing challenges. Its based on JavaScript so you will have to have Node.js as interpretator and thats all.
+                <br>
+                <br>
+                Your are ready to use LilTea! 
+            </p>
             <h3>Atoms</h3>
-            <p>Atoms are built-in functions making solutions quite easier and faster. They are the construction of the language</p>
+            <p>Atoms are the main part of the language. They are built-in functions making solutions quite easier and faster. Below you can see a list of all the atoms LilTea supports and thanks to the implementation of the language and that they can be added easily so many more are on the way!</p>
             <table>  
                     <tr>
                         <th>lilTea symbol</th>
@@ -161,13 +166,13 @@
             If you want to sum the numbers 6 and 5 in the stack all you have do is the following:
             <pre>
                 <code>
-                  node ./mycall.lit 5 6
+    node ./source.lit 5 6
                 </code>
             </pre>
-            And your code: 
+            And your source file should be: 
             <pre>
                     <code>
-                      +
+      +
                     </code>
             </pre>
             <h2>Language core</h2>
@@ -183,26 +188,115 @@
             <p>The prelexer is responsible for the literal completion system so</p>
             <pre>
                     <code>
-                            5+6>asd
+        <span style="color:#FF0000">5</span>+<span style="color:red">6</span><span style="color: rgb(1, 77, 1)">>asd</span>
                     </code>
             </pre>
-            <p>and</p>
+        <p>and</p>
             <pre>
                     <code>
-                            5+6>asd<
+        5+6>asd<
                     </code>
             </pre>
-            <p>should be the same</p>
-            <h2>Prelexer</h2>
+            <p>should be the interpretated the same way.</p>
+            <h2>Lexer</h2>
             The lexer tokenizes the input into tokens as it follows:
             <h3> Literals </h3>
             <p>The literals LilTea supports are:</p>
             <ul class= "lits">
-                    <li>Numbers</li>
-                    <li>Strings</li>
-                    <li>Chars</li>
+                <li>Numbers</li>
+                <li>Strings</li>
+                <li>Chars</li>
+                <li> Arrays </li>
             </ul>
-
+            <pre style="font-size: 23px;">
+            <code>
+        <span style="color: red">5</span> // literal for number
+        <span style="color: blue">'c</span> // literal for characters
+        <span style="color: green">>Hello World!<</span> // literal for Strings
+        <span style="color: #0050FD">[1,2,>Hello!<]</span> // literal for Array
+            </code>
+            </pre>
+        <h3> Conditionals </h3>
+        <p>Like every other language LilTea has all the known conditeonal statements. For instance:</p>
+        <pre style="font-size: 23px;">
+                <code>
+        =>STATMENT<Ø?p
+                </code>
+        </pre>
+        The following code is read like this:
+        <pre style="font-size: 17px;">
+    <code>
+    <span style="color: red; font-size: 25px">=</span> // Operator for equality
+    <span style="color: green; font-size: 18px">>STATEMENT<</span>// Statement to check for using the last element in the stack for comparisment
+    <span style="color: #F46524; font-size: 25px">Ø</span>// The atom to be executed if the comparisment returns true (if)
+    <span style="color: blue; font-size: 25px">p</span>// the atom to be executed if the comparisment returns false (else)
+    </code>
+        </pre>
+        <h3> Modifiers </h3>
+        LilTea supports stack modificators making the work with the stack easier.
+        <table style="margin-top: 30px">  
+            <tr>
+                <th>Symbol</th>
+                <th> Explanation </th>
+            </tr>
+            <tr>  
+                <td>×</td>
+                <td>Preventing the next operation to pop values from the stack</td>
+            </tr>
+            <tr>  
+                <td>Ø</td>
+                <td>Makes the next operation take argument from the begging of the stack</td>
+            </tr> 
+            <tr>  
+                <td>Œ</td>
+                <td>Makes the next operation "greedy"</td>
+            </tr>   
+        </table>
+        <h3> Variables </h3>
+        LilTea also supports built-in variables for easier access to infromation. There are 6 variables and they are labeled like the first 6 letters of the alphabet(A,B,C,D,E,F).
+        Working with them is easy. For example:
+        <pre style="font-size: 23px;">
+                <code>
+        <span style="color:green">>Hello!&lt</span><span style="color:red">a</span> // Sets the variable A to the string Hello!
+                </code>
+        </pre>
+        Then later you can add the variable to the end of the stack by just calling:
+        <pre style="font-size: 23px;">
+                <code>
+        <span style="color:red">A</span> // Pushes the Hello! to the end of the stack
+                </code>
+        </pre>
+        All the variables have default value of often used values in solving golding problems:
+        <table style="margin-top: 30px">  
+                <tr>
+                    <th>Variable</th>
+                    <th>Default value</th>
+                </tr>
+                <tr>  
+                    <td>A</td>
+                    <td>The english alphabet as an array</td>
+                </tr>
+                <tr>  
+                    <td>B</td>
+                    <td>[0,1,2,3,4,5,6,7,8,9]</td>
+                </tr> 
+                <tr>  
+                    <td>C</td>
+                    <td>PI</td>
+                </tr>
+                <tr>  
+                    <td>D</td>
+                    <td>Todays date</td>
+                </tr>
+                <tr>  
+                    <td>E</td>
+                    <td>Hours of the day</td>
+                </tr>  
+                <tr>  
+                    <td>F</td>
+                    <td>Minutes of the day</td>
+                </tr>    
+            </table>
         </div>
       </div>
       <div class="About">
@@ -210,15 +304,29 @@
                 <hr> <h1>About  </h1> <hr>
         </div>
         <div class= "content">
-          <h2>Who are we?</h2>
-          <p>We are two students from eleven grade from TUES Bulgaria. We hope this project will be a good start for our careers.</p>
-          <p> Here is our githutb repository with all the work we have done so far: <p>
+            <h2>Who are we?</h2>
+            <p>We are two students from eleven grade from TUES, Bulgaria. We hope this project will be a good start for our careers.</p>
+            <p> Here is our githutb repository with all the work we have done so far: <p>
                 <pre>
                         <code>
-    https://github.com/mdatsev/liltea
+        https://github.com/LilTea/liltea
                         </code>
                 </pre>
+                
+            <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:800; height: 350; margin-bottom: 40px; font-family: 'Courier New'">  
+                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 60px"/>
+                <p>Name: Dartin Macev</p> 
+                <p>Role: Developer, creator</p>
+                <p>Github:  https://github.com/mdatsev</p>  
+            </div> 
+            <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:800; height: 350; font-family: 'Courier New'">  
+                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 60px"/>
+                <p>Name: Gladislav Veorgiev</p> 
+                <p>Role: Developer, creator</p>
+                <p>Github:  https://github.com/mdatsev</p>  
+            </div>    
         </div>
+        
       </div>
       <div class="Interpretator">
             <div class="navigation">
