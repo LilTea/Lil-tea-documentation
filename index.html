@@ -11,6 +11,7 @@
       <li>Implementation</li>
       <li>Interpretator</li>
       <li>About</li>
+      <li onclick="location.href='/video.html';">Video</li>
     </ul>
     <div class= "main-page">
       <div class="Introduction">
@@ -485,14 +486,16 @@ node ./source.lit Hello!
                     </code>
         </pre>
         The following code is read like this:
+        <div id="codeCont", style="white-space: pre-line;">
         <pre style="font-size: 17px;">
     <code>
-<span style="color: red; font-size: 25px">=</span> // Operator for equality, checks the quality of the last two elements in teh stack
+<span style="color: red; font-size: 25px">=</span> // Operator for equality, checks the quality of the last two elements in the stack
 <span style="color: green; font-size: 18px">>STATEMENT<</span>// string literal to be pushed to the stack 
-<span style="color: #F46524; font-size: 25px">Ø</span>// Atom reversing the steck(e.g making the next operation to read form the beggining of the stack)
+<span style="color: #F46524; font-size: 25px">Ø</span>// Atom reversing the steck
 <span style="color: blue; font-size: 25px">p</span>// the atom to be executed if the comparisment had return true (else)
     </code>
         </pre>
+      </div>
         <h3> Modifiers </h3>
         LilTea supports stack modificators making the work with the stack easier.
         <table style="margin-top: 30px">  
@@ -516,6 +519,7 @@ node ./source.lit Hello!
         <h3> Variables </h3>
         LilTea also supports built-in variables for easier access to infromation. There are 6 variables and they are labeled like the first 6 letters of the alphabet(A,B,C,D,E,F).
         Working with them is easy. For example:
+
 <pre style="font-size: 23px;">
         <code>
 <span style="color:green">>Hello!&lt</span><span style="color:red">a</span> // Sets the variable A to the string Hello!
@@ -527,6 +531,7 @@ node ./source.lit Hello!
 <span style="color:red">A</span> // Pushes the Hello! to the end of the stack
         </code>
 </pre>
+
         All the variables have default value of often used values in solving golding problems:
         <table style="margin-top: 30px" id = "grid">  
                 <tr>
@@ -588,15 +593,15 @@ node ./source.lit Hello!
                     </code>
                 </pre>
                 
-            <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:800; height: 350; margin-bottom: 40px; font-family: 'Courier New'">  
-                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 30px"/>
+            <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:90%; margin-bottom: 40px; font-family: 'Courier New'; padding-bottom: 15%;padding-right: 5%;padding-left: 2%;padding-top: 5%">  
+                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="30%" style="height:auto;margin-right: 2%"/>
                 <p>Name: Dartin Macev</p> 
                 <p>Role: Developer, creator</p>
                 <p>Github: <span style="font-size: 20px"><a href="https://github.com/mdatsev">https://github.com/mdatsev</a></span></p>  
             </div> 
-            <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:800; height: 350; font-family: 'Courier New'">  
-                <img src="default.jpg" border="3" alt="default_picture"  align="left" width="280" height="280" style="margin-top: 15px;margin-left: 10px;margin-bottom: 15px;display: inline-block;margin-right: 30px"/>
-                <p>Name: Gladislav Veorgiev</p> 
+            <div style="border:5px dotted black;border-radius: 12px; border-style: dotted; background-color:#f46524; width:90%; margin-bottom: 40px; font-family: 'Courier New'; padding-bottom: 15%;padding-right: 5%;padding-left: 2%;padding-top: 5%">  
+                  <img src="default.jpg" border="3" alt="default_picture"  align="left" width="30%" style="height:auto;margin-right: 2%"/>
+                  <p>Name: Gladislav Veorgiev</p> 
                 <p>Role: Developer, creator</p>
                 <p>Github:<span style="font-size: 20px"><a href="https://github.com/VGeorgiev1">https://github.com/VGeorgiev1</a></span></p>  
             </div>    
